@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+.clock-title {
+  text-align: center;
+  font-family: "Lucida Handwriting", Cursive;
+  padding: 30px;
+  font-size: 50px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 3);
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  margin-bottom: 20px;
+}
+.clock-title:hover{
+  background-color: #2980ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(150deg, #f3f3f3, #888);
+  border-radius: 50%;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  position: relative;
+  margin: 50px auto;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 3);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.clock:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 3);
+}
+.clock span {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 3px;
+  text-align: center;
+
+
+}
+.clock span b{
+  transform: rotate(calc(-30deg * var(--i)));
+  display: block;
+}
+
+.hand {
+  width: 30%;
+  color: #000;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  transform-origin: 100% 50%;
+  transform: translateX(0%);
+  transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hour-hand {
+  background-color: #000;
+  height: 5px;
+}
+
+.minute-hand {
+  background-color: #000;
+  height: 2px;
+}
+
+.second-hand {
+  background-color: red;
+  height: 2px;
+}
+body.dark-theme {
+  background-color: #222;
+  color: #f3f3f3;
+}
+
+body.dark-theme .clock {
+  background-image: linear-gradient(150deg, #555, #333);
+}
+
+body.dark-theme .clock-title {
+  color: #f3f3f3;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body.dark-theme .clock span {
+  color: #f3f3f3;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body.dark-theme .hand, body.dark-theme .hour-hand, body.dark-theme .minute-hand {
+  background-color: #f3f3f3;
+}
+
+body.dark-theme .second-hand {
+  background-color: #e74c3c;
+}
+/* Toggle Button Styling */
+#themeToggle {
+  font-family: 'Poppins', sans-serif;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 3);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth effects */
+  outline: none;
+  margin-bottom: 20px;
+}
+
+#themeToggle:hover {
+  background-color: #2980ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+#themeToggle:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
